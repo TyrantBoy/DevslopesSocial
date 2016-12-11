@@ -14,6 +14,11 @@
 		AD336E2C1DFD1030007E8B18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD336E2B1DFD1030007E8B18 /* Assets.xcassets */; };
 		AD336E2F1DFD1030007E8B18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD336E2D1DFD1030007E8B18 /* LaunchScreen.storyboard */; };
 		AD336E371DFD10BF007E8B18 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD336E361DFD10BF007E8B18 /* GoogleService-Info.plist */; };
+		ADA973E01DFD2F3F001C38E9 /* FancyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA973DF1DFD2F3F001C38E9 /* FancyView.swift */; };
+		ADA973E31DFD2FE7001C38E9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA973E21DFD2FE7001C38E9 /* Constants.swift */; };
+		ADA973E51DFD31C4001C38E9 /* FancyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA973E41DFD31C4001C38E9 /* FancyButton.swift */; };
+		ADA973E71DFD333A001C38E9 /* FancyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA973E61DFD333A001C38E9 /* FancyTextField.swift */; };
+		ADA973E91DFD349F001C38E9 /* FancyButtonSign.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA973E81DFD349F001C38E9 /* FancyButtonSign.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +32,11 @@
 		AD336E2E1DFD1030007E8B18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AD336E301DFD1030007E8B18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD336E361DFD10BF007E8B18 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		ADA973DF1DFD2F3F001C38E9 /* FancyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyView.swift; sourceTree = "<group>"; };
+		ADA973E21DFD2FE7001C38E9 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		ADA973E41DFD31C4001C38E9 /* FancyButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyButton.swift; sourceTree = "<group>"; };
+		ADA973E61DFD333A001C38E9 /* FancyTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyTextField.swift; sourceTree = "<group>"; };
+		ADA973E81DFD349F001C38E9 /* FancyButtonSign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyButtonSign.swift; sourceTree = "<group>"; };
 		B43A08C1A9DC3D6CBFC11CDE /* Pods-Devslopes Social.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Devslopes Social.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Devslopes Social/Pods-Devslopes Social.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,6 +90,7 @@
 		AD336E231DFD1030007E8B18 /* Devslopes Social */ = {
 			isa = PBXGroup;
 			children = (
+				ADA973E11DFD2FD7001C38E9 /* Utilities */,
 				ADA973DC1DFD13A0001C38E9 /* Modal */,
 				ADA973DD1DFD13A4001C38E9 /* View */,
 				ADA973DE1DFD13A8001C38E9 /* Controller */,
@@ -103,6 +114,10 @@
 		ADA973DD1DFD13A4001C38E9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				ADA973DF1DFD2F3F001C38E9 /* FancyView.swift */,
+				ADA973E41DFD31C4001C38E9 /* FancyButton.swift */,
+				ADA973E61DFD333A001C38E9 /* FancyTextField.swift */,
+				ADA973E81DFD349F001C38E9 /* FancyButtonSign.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -113,6 +128,14 @@
 				AD336E261DFD1030007E8B18 /* SignInVC.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		ADA973E11DFD2FD7001C38E9 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				ADA973E21DFD2FE7001C38E9 /* Constants.swift */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +265,11 @@
 			files = (
 				AD336E271DFD1030007E8B18 /* SignInVC.swift in Sources */,
 				AD336E251DFD1030007E8B18 /* AppDelegate.swift in Sources */,
+				ADA973E01DFD2F3F001C38E9 /* FancyView.swift in Sources */,
+				ADA973E91DFD349F001C38E9 /* FancyButtonSign.swift in Sources */,
+				ADA973E71DFD333A001C38E9 /* FancyTextField.swift in Sources */,
+				ADA973E31DFD2FE7001C38E9 /* Constants.swift in Sources */,
+				ADA973E51DFD31C4001C38E9 /* FancyButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
