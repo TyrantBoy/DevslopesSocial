@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,11 +21,111 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9fg-gG-o5t">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="devslopes-logo" translatesAutoresizingMaskIntoConstraints="NO" id="XQr-Ep-d3H">
+                                        <rect key="frame" x="112" y="28" width="150" height="94"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.73725490196078436" blue="0.83137254901960778" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="1pu-M9-gJh"/>
+                                    <constraint firstItem="XQr-Ep-d3H" firstAttribute="centerX" secondItem="9fg-gG-o5t" secondAttribute="centerX" id="T2V-o5-L8p"/>
+                                    <constraint firstItem="XQr-Ep-d3H" firstAttribute="centerY" secondItem="9fg-gG-o5t" secondAttribute="centerY" id="h4K-S6-pDz"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qhV-2F-KJ3">
+                                <rect key="frame" x="0.0" y="592" width="375" height="75"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you haven't signed in before, an account will be automatically created for you" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DjO-pe-WXm">
+                                        <rect key="frame" x="8" y="8" width="359" height="59"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="15"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.51372549019607838" blue="0.5607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="S74-17-q1q"/>
+                                    <constraint firstItem="DjO-pe-WXm" firstAttribute="top" secondItem="qhV-2F-KJ3" secondAttribute="top" constant="8" id="Viw-PN-j0G"/>
+                                    <constraint firstItem="DjO-pe-WXm" firstAttribute="leading" secondItem="qhV-2F-KJ3" secondAttribute="leading" constant="8" id="X1E-uS-kIS"/>
+                                    <constraint firstAttribute="bottom" secondItem="DjO-pe-WXm" secondAttribute="bottom" constant="8" id="iTS-QV-pYl"/>
+                                    <constraint firstAttribute="trailing" secondItem="DjO-pe-WXm" secondAttribute="trailing" constant="8" id="zLc-tj-qdH"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a sign in method" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9lE-rq-dqb">
+                                <rect key="frame" x="16" y="158" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="h6F-wu-gIa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="15"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.87" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rn2-b3-q54">
+                                <rect key="frame" x="112" y="219" width="150" height="150"/>
+                                <color key="backgroundColor" red="0.17254901960784313" green="0.2627450980392157" blue="0.53725490196078429" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="LJp-6R-kV1"/>
+                                    <constraint firstAttribute="width" constant="150" id="SrS-fH-RgM"/>
+                                </constraints>
+                                <state key="normal" image="f"/>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="FLu-8k-TnH">
+                                <rect key="frame" x="30" y="409" width="315" height="151"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your penis" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hje-BV-OWK">
+                                        <rect key="frame" x="0.0" y="0.0" width="315" height="37"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.87" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your butthole" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uxc-O7-nci">
+                                        <rect key="frame" x="0.0" y="57" width="315" height="37"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.87" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="diG-hk-eLw">
+                                        <rect key="frame" x="0.0" y="114" width="315" height="37"/>
+                                        <color key="backgroundColor" red="0.8666666666666667" green="0.17254901960784313" blue="0.0" alpha="0.87" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
+                                        <state key="normal" title="Sign In">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="9lE-rq-dqb" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="1Bs-aZ-sdS"/>
+                            <constraint firstItem="rn2-b3-q54" firstAttribute="top" secondItem="9lE-rq-dqb" secondAttribute="bottom" constant="40" id="2E1-fh-WmQ"/>
+                            <constraint firstItem="9lE-rq-dqb" firstAttribute="top" secondItem="9fg-gG-o5t" secondAttribute="bottom" constant="8" id="7cJ-fa-K7b"/>
+                            <constraint firstItem="9fg-gG-o5t" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="EG3-6W-xTA"/>
+                            <constraint firstItem="9lE-rq-dqb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="MAA-BV-EkF"/>
+                            <constraint firstItem="qhV-2F-KJ3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Ql7-if-h2v"/>
+                            <constraint firstAttribute="trailing" secondItem="qhV-2F-KJ3" secondAttribute="trailing" id="SS9-aw-QhX"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qhV-2F-KJ3" secondAttribute="bottom" id="YEG-x8-ReA"/>
+                            <constraint firstItem="FLu-8k-TnH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="30" id="cod-Lj-OvP"/>
+                            <constraint firstItem="9fg-gG-o5t" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="eoT-hX-vez"/>
+                            <constraint firstItem="rn2-b3-q54" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hFb-Zs-e7V"/>
+                            <constraint firstAttribute="trailing" secondItem="9fg-gG-o5t" secondAttribute="trailing" id="ohe-v2-xlT"/>
+                            <constraint firstAttribute="trailing" secondItem="FLu-8k-TnH" secondAttribute="trailing" constant="30" id="rBz-6j-vIc"/>
+                            <constraint firstItem="FLu-8k-TnH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rTB-vQ-QTi"/>
+                            <constraint firstItem="FLu-8k-TnH" firstAttribute="top" secondItem="rn2-b3-q54" secondAttribute="bottom" constant="40" id="uCd-BT-ea6"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="204" y="138.0809595202399"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="devslopes-logo" width="150" height="94"/>
+        <image name="f" width="352" height="328"/>
+    </resources>
 </document>
