@@ -21,6 +21,10 @@ class FeedVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //updates likes and feed
+        DataService.ds.REF_POSTS.observe(.value, with: { (snapshot) in
+            print(snapshot.value)
+        })
     }
 
   
