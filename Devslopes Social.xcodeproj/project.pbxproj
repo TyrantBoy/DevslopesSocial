@@ -22,6 +22,7 @@
 		ADE4CDD71DFE440B00688E5B /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE4CDD61DFE440B00688E5B /* FeedVC.swift */; };
 		ADE4CDD91DFE599B00688E5B /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE4CDD81DFE599B00688E5B /* CircleView.swift */; };
 		ADE4CDDB1DFE7CE100688E5B /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE4CDDA1DFE7CE100688E5B /* PostCell.swift */; };
+		ADE4CDDE1DFE8F5400688E5B /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE4CDDD1DFE8F5400688E5B /* DataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		ADE4CDD61DFE440B00688E5B /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		ADE4CDD81DFE599B00688E5B /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		ADE4CDDA1DFE7CE100688E5B /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		ADE4CDDD1DFE8F5400688E5B /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		B43A08C1A9DC3D6CBFC11CDE /* Pods-Devslopes Social.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Devslopes Social.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Devslopes Social/Pods-Devslopes Social.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,6 +98,7 @@
 		AD336E231DFD1030007E8B18 /* Devslopes Social */ = {
 			isa = PBXGroup;
 			children = (
+				ADE4CDDC1DFE8F3800688E5B /* Services */,
 				ADA973E11DFD2FD7001C38E9 /* Utilities */,
 				ADA973DC1DFD13A0001C38E9 /* Modal */,
 				ADA973DD1DFD13A4001C38E9 /* View */,
@@ -145,6 +148,14 @@
 				ADA973E21DFD2FE7001C38E9 /* Constants.swift */,
 			);
 			name = Utilities;
+			sourceTree = "<group>";
+		};
+		ADE4CDDC1DFE8F3800688E5B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				ADE4CDDD1DFE8F5400688E5B /* DataService.swift */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +288,7 @@
 				AD336E251DFD1030007E8B18 /* AppDelegate.swift in Sources */,
 				ADA973E01DFD2F3F001C38E9 /* FancyView.swift in Sources */,
 				ADA973E91DFD349F001C38E9 /* FancyButtonSign.swift in Sources */,
+				ADE4CDDE1DFE8F5400688E5B /* DataService.swift in Sources */,
 				ADE4CDD71DFE440B00688E5B /* FeedVC.swift in Sources */,
 				ADA973E71DFD333A001C38E9 /* FancyTextField.swift in Sources */,
 				ADA973E31DFD2FE7001C38E9 /* Constants.swift in Sources */,
