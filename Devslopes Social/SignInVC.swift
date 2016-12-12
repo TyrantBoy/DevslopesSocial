@@ -11,13 +11,19 @@ import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
 import Firebase
+import SwiftKeychainWrapper
 
 
 /**
  Enable FB login in Firebase AUTH Sign-In Tab
  Add in FB App ID & Secret from the FB dashboard
  Copy & pasta the link to Facebook Login (Under PRODUCTS) > Settings > In "Valid OAuth redirect URLs
+ 
+ 
+ Keychain WILL ALWAYS keep users data even if they destroyed the app :O!!!!
+ 
  **/
+
 
 class SignInVC: UIViewController {
     @IBOutlet weak var emailField: FancyTextField!
@@ -25,10 +31,23 @@ class SignInVC: UIViewController {
     //attribute inspector > secure text
     @IBOutlet weak var passwordField: FancyTextField!
     
+    
+    //cannot perform segue too early
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+       
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if let _ = KeychainWrapper.standard.string(forKey: KEY_UID) {
+            performSegue(withIdentifier: "feed", sender: nil)
+        }
+        
+    }
+    
     
     @IBAction func FBTapped(_ sender: UIButton) {
         let facebookLogin = FBSDKLoginManager()
@@ -55,6 +74,10 @@ class SignInVC: UIViewController {
                 print("DONALD: Unable to authenticate with Firebase - \(error)")
             } else {
                 print("DONALD Successfully authenticated with Firebase")
+                
+                if let user = user {
+                    self.completeSignIn(id: user.uid)
+                }
             }
         })
     }
@@ -65,6 +88,11 @@ class SignInVC: UIViewController {
             FIRAuth.auth()?.signIn(withEmail: email, password: pwd, completion: { (user, error) in
                 if error == nil {
                         print("DONALD: User authenticated with Firebase")
+                    
+                    if let user = user {
+                        self.completeSignIn(id: user.uid)
+                    }
+                    
                 } else {
                     //doesn't exist, create
                     //6+ characters for password
@@ -73,6 +101,10 @@ class SignInVC: UIViewController {
                             print("DONALD: Unable to authenticate with Firebase using email ")
                         } else {
                             print("DONALD: Succesfully authentiated with Firebase")
+                            
+                            if let user = user {
+                                self.completeSignIn(id: user.uid)
+                            }
                         }
                     })
                     
@@ -80,5 +112,14 @@ class SignInVC: UIViewController {
             })
         }
     }
+    
+    func completeSignIn(id: String) {
+        let keychainResult =  KeychainWrapper.standard.set(id, forKey: KEY_UID)
+          print("DONALD: Data saved to keychain \(keychainResult)")
+        
+        //it works!
+        performSegue(withIdentifier: "feed", sender: nil)
+    }
+
 }
 
