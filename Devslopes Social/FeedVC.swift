@@ -17,11 +17,16 @@ import SwiftKeychainWrapper
 class FeedVC: UIViewController {
 
     @IBOutlet weak var myTable: UITableView!
+    @IBOutlet weak var addImage: CircleView!
     
     var posts = [Post]()
+    var imagePicker: UIImagePickerController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        imagePicker = UIImagePickerController()
+        imagePicker.allowsEditing = true
+        imagePicker.delegate = self
 
         //updates likes and feed
         DataService.ds.REF_POSTS.observe(.value, with: { (snapshot) in
@@ -44,6 +49,9 @@ class FeedVC: UIViewController {
     }
 
   
+    @IBAction func addImageTapped(_ sender: Any) {
+        present(imagePicker, animated: true, completion: nil)
+    }
 
     @IBAction func signOutTapped(_ sender: Any) {
         let keychainResult = KeychainWrapper.standard.removeObject(forKey: KEY_UID)
@@ -71,5 +79,18 @@ extension FeedVC: UITableViewDelegate, UITableViewDataSource {
         } else {
             return PostCell()
         }
+    }
+}
+
+extension FeedVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
+            addImage.image  = image
+        } else {
+            print("Donald: A valid image wasn't selected") 
+        }
+        
+        imagePicker.dismiss(animated: true, completion: nil)
     }
 }
